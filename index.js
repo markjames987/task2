@@ -16,5 +16,16 @@ function calculate(){
   }
   catch(error){
     screen.value = "error"
+  } function factorial() {
+    let num = parseInt(document.getElementById("screen").value);
+    if (isNaN(num) || num < 0) {
+      document.getElementById("screen").value = "Error";
+      return;
+    }
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+      result *= i;
+    }
+    document.getElementById("screen").value = result;
   }
 }

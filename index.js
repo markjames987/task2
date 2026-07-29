@@ -1,5 +1,6 @@
 // Calculator Program
 
+// Get the calculator screen
 const screen = document.getElementById("screen");
 
 function appendtodisplay(value) {

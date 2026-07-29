@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>calculator</title>
+  <title>Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
   <div id="calculator">
@@ -27,19 +28,26 @@
       <button onclick="appendtodisplay('8')">8</button>
       <button onclick="appendtodisplay('5')">5</button>
 
-      <!-- Bracket Buttons -->
-      <button onclick="appendtodisplay('(')">(</button>
-      <button onclick="appendtodisplay(')')">)</button>
-
     </div>
 
     <input type="text" id="screen" value="" readonly>
 
     <div class="operator">
+
       <button onclick="appendtodisplay('+')">+</button>
       <button onclick="appendtodisplay('-')">-</button>
       <button onclick="appendtodisplay('/')">/</button>
       <button onclick="appendtodisplay('*')">*</button>
+
+      <!-- Modulus -->
+      <button onclick="appendtodisplay('%')">%</button>
+
+      <!-- Exponential -->
+      <button onclick="appendtodisplay('^')">EXP</button>
+
+      <!-- Clear -->
+      <button onclick="clearDisplay()">C</button>
+
     </div>
 
   </div>

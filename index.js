@@ -1,64 +1,88 @@
-// calculator program
-
-
+//calculate program
 const screen = document.getElementById("screen");
 
-function appendtodisplay(value){
-  screen.value += value;
+// Display numbers/operators
+function appendtodisplay(value) {
+    screen.value += value;
 }
-function clearDisplay(){
+
+// Clear the display
+function clearDisplay() {
     screen.value = "";
 }
 
-function calculate(){
-  try{
-    screen.value = eval(screen.value);
-  }
-  catch(error){
-    screen.value = "error"
-  } function factorial() {
-    let num = parseInt(document.getElementById("screen").value);
-    if (isNaN(num) || num < 0) {
-      document.getElementById("screen").value = "Error";
-      return;
+// Basic calculator
+function calculate() {
+    try {
+        screen.value = eval(screen.value);
+    } catch (error) {
+        screen.value = "Error";
     }
+}
+
+// Factorial
+function factorial(num) {
+    if (num < 0) return NaN;
+
+    if (num === 0 || num === 1)
+        return 1;
+
     let result = 1;
-    for (let i = 1; i <= num; i++) {
-      result *= i;
+
+    for (let i = 2; i <= num; i++) {
+        result *= i;
     }
-    document.getElementById("screen").value = result;
-  }
-  
+
+    return result;
+}
 
 // Combination (nCr)
-// Enter values as: n,r  e.g. 5,2
-function combination() {
-    let input = screen.value.trim();
-    let parts = input.split(",");
+function combination(n, r) {
+    if (r > n || r < 0 || n < 0)
+        return "Error";
 
-    if (parts.length !== 2) {
-        screen.value = "Error";
-        return;
-    }
-
-    let n = parseInt(parts[0]);
-    let r = parseInt(parts[1]);
-
-    if (
-        isNaN(n) ||
-        isNaN(r) ||
-        n < 0 ||
-        r < 0 ||
-        r > n
-    ) {
-        screen.value = "Error";
-        return;
-    }
-
-    let result =
-        factorialNum(n) /
-        (factorialNum(r) * factorialNum(n - r));
-
-    screen.value = result;
+    return factorial(n) / (factorial(r) * factorial(n - r));
 }
+
+// Calculate Combination
+// Enter like: 5,2
+function calculateCombination() {
+    let input = screen.value.split(",");
+
+    if (input.length !== 2) {
+        screen.value = "Use n,r";
+        return;
+    }
+
+    let n = parseInt(input[0]);
+    let r = parseInt(input[1]);
+
+    screen.value = combination(n, r);
+}
+
+// Solve Linear Equation
+// Equation: ax - b = c
+// Enter values as: a,b,c
+// Example: 2,4,10
+function solveLinearEquation() {
+
+    let input = screen.value.split(",");
+
+    if (input.length !== 3) {
+        screen.value = "Use a,b,c";
+        return;
+    }
+
+    let a = parseFloat(input[0]);
+    let b = parseFloat(input[1]);
+    let c = parseFloat(input[2]);
+
+    if (a === 0) {
+        screen.value = "No Solution";
+        return;
+    }
+
+    let x = (c + b) / a;
+
+    screen.value = "x = " + x;
 }

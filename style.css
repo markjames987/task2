@@ -69,3 +69,17 @@ button:active{
     grid-template-columns: 4, 70px;
     gap: 14px;
 }
+.linear-btn {
+    grid-column: 1/-1;
+    background: #007bff;
+    font-size: 32px;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    padding: 10px;
+}
+.linear-btn:hover{
+  background: 0056b3;
+
+}
+    

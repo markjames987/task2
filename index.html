@@ -10,7 +10,7 @@
   <div id="calculator">
     <div id="keys">
       <button onclick="appendtodisplay('0')">0</button>
-      <button onclick="appendtodisplay('3')">3</button> <button onclick="clearDisplay()">C</button>
+      <button onclick="appendtodisplay('3')">3</button>
       <button onclick="appendtodisplay('6')">6</button>
       <button onclick="appendtodisplay('9')">9</button>
       <button onclick="appendtodisplay('1')">1</button>
@@ -22,7 +22,12 @@
       <button onclick="appendtodisplay('2')">2</button>
       <button onclick="appendtodisplay('8')">8</button>
       <button onclick="appendtodisplay('5')">5</button>
+       <!-- Comma button -->
+      <button onclick="appendtodisplay(',')">,</button>
+      <button onclick="appendtodisplay('X')">X</button>
+    <button class="linear-btn" onclick="solveLinearEquation()">ax−b=c</button>
     </div>
+     
     <input type="text" id="screen" value="" readonly>
     <div class="operator">
       <button onclick="appendtodisplay('+')">+</button>
@@ -30,10 +35,12 @@
       <button onclick="appendtodisplay('/')">/</button>
       <button onclick="appendtodisplay('*')">*</button>
       <button onclick="clearDisplay()">C</button>
-       <button onclick="combination()">nCr</button>
-    </div>
+      <button onclick="calculateCombination()">nCr</button>
+  
+    
   </div>
   <div class="my-class">
   <script src="index.js"></script>
+  </div>
 </body>
 </html>

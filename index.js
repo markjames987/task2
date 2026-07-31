@@ -1,4 +1,88 @@
-//calculate program
+/*  calculator program
+
+const screen = document.getElementById("screen");
+
+function appendtodisplay(value) {
+    screen.value += value;
+}
+
+function clearDisplay() {
+    screen.value = "";
+}
+
+function calculate() {
+    try {
+        screen.value = eval(screen.value);
+    } catch (error) {
+        screen.value = "Error";
+    }
+    
+}
+
+function that returns factorial
+function factorialNum(num) {
+    if (num < 0) return NaN;
+
+    let result = 1;
+    for (let i = 1; i <= num; i++) {
+           result *= i;
+    }
+    return result;
+}
+
+Factorial button
+function factorial() {
+    let num = parseInt(screen.value);
+
+    if (isNaN(num) || num < 0) {
+        screen.value = "!";
+        return;
+    }
+
+    screen.value = factorialNum(num);
+}
+
+function combination() {
+ let input = screen.value.trim();   // get what’s typed on screen
+  let parts = input.split(",");      // split into n and r
+
+  if (parts.length !== 2) {
+    screen.value = "c";
+   return;
+  }
+
+ let n = parseInt(parts[0]);
+  let r = parseInt(parts[1]);
+
+   validate input
+  if (isNaN(n) || isNaN(r) || n < 0 || r < 0 || r > n) {
+    screen.value = "Error";
+  / return; }
+
+   compute nCr
+ // let result = factorialNum(n) / (factorialNum(r) * factorialNum(n - r));
+ // screen.value = result;
+function factorial(num) {
+    if (num=== 0 || num === 1)
+return 1;
+    let result =1;
+    for(let i = 2; i<= num; i++){
+        result *= i;
+    }
+    return result;
+
+}
+
+function combination(n, r) {
+
+    let anwser;
+
+  return factorial(n) /
+(factorial(r) * factorial (n - r));
+
+  return anwser;
+
+}*/
 const screen = document.getElementById("screen");
 
 // Display numbers/operators
